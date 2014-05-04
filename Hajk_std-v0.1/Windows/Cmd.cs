@@ -1,0 +1,102 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Diagnostics;
+using System.Threading;
+
+namespace Hajk_std.Windows
+{
+    public class Cmd
+    {
+        public static void RunCommand(string command)
+        {
+            Process p = new Process();
+            p.StartInfo = new ProcessStartInfo("cmd", "/c \"dir c:\\\"")
+            {
+                RedirectStandardOutput= true,
+                RedirectStandardInput = true,
+                StandardOutputEncoding = Encoding.GetEncoding("utf-8"),
+                UseShellExecute= false,
+                CreateNoWindow = false
+            };
+            p.Start();
+
+            Console.ReadLine();
+            // Poslání příkazu
+            p.StandardInput.WriteLine(command);
+            p.StandardOutput.ReadLine();
+
+            // ukončení konzole
+            p.WaitForExit();
+        }
+
+        /// <summary>
+        /// Execute the command Asynchronously.
+        /// </summary>
+        /// <param name="command">string command.</param>
+        public void ExecuteCommandAsync(string command)
+        {
+            try
+            {
+                //Asynchronously start the Thread to process the Execute command request.
+                Thread objThread = new Thread(new ParameterizedThreadStart(ExecuteCommandSync));
+                //Make the thread as background thread.
+                objThread.IsBackground = true;
+                //Set the Priority of the thread.
+                objThread.Priority = ThreadPriority.AboveNormal;
+                //Start the thread.
+                objThread.Start(command);
+            }
+            catch (ThreadStartException objException)
+            {
+                // Log the exception
+            }
+            catch (ThreadAbortException objException)
+            {
+                // Log the exception
+            }
+            catch (Exception objException)
+            {
+                // Log the exception
+            }
+        }
+
+        /// <summary>
+        /// Executes a shell command synchronously.
+        /// </summary>
+        /// <param name="command">string command</param>
+        /// <returns>string, as output of the command.</returns>
+        public void ExecuteCommandSync(object command)
+        {
+            try
+            {
+                // create the ProcessStartInfo using "cmd" as the program to be run,
+                // and "/c " as the parameters.
+                // Incidentally, /c tells cmd that we want it to execute the command that follows,
+                // and then exit.
+                System.Diagnostics.ProcessStartInfo procStartInfo =
+                    new System.Diagnostics.ProcessStartInfo("cmd", "/c " + command);
+
+                // The following commands are needed to redirect the standard output.
+                // This means that it will be redirected to the Process.StandardOutput StreamReader.
+                procStartInfo.RedirectStandardOutput = true;
+                procStartInfo.UseShellExecute = false;
+                // Do not create the black window.
+                procStartInfo.CreateNoWindow = false;
+                // Now we create a process, assign its ProcessStartInfo and start it
+                System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                proc.StartInfo = procStartInfo;
+                proc.Start();
+                // Get the output into a string
+                string result = proc.StandardOutput.ReadToEnd();
+                // Display the command output.
+                Console.WriteLine(result);
+            }
+            catch (Exception objException)
+            {
+                // Log the exception
+            }
+        }
+    }
+}
