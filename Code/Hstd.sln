@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hstd_lib", "Hajk_std-v0.1\Hstd_lib.csproj", "{686CDEA7-48F9-4FA6-94DF-3D9610384AF4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hstd_lib", "Hstd\Hstd_lib.csproj", "{686CDEA7-48F9-4FA6-94DF-3D9610384AF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{2D773D2C-7489-42C3-B11D-37EF0C98C951}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,16 @@ Global
 		{686CDEA7-48F9-4FA6-94DF-3D9610384AF4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{686CDEA7-48F9-4FA6-94DF-3D9610384AF4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{686CDEA7-48F9-4FA6-94DF-3D9610384AF4}.Release|x86.ActiveCfg = Release|Any CPU
+		{2D773D2C-7489-42C3-B11D-37EF0C98C951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D773D2C-7489-42C3-B11D-37EF0C98C951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D773D2C-7489-42C3-B11D-37EF0C98C951}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2D773D2C-7489-42C3-B11D-37EF0C98C951}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2D773D2C-7489-42C3-B11D-37EF0C98C951}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2D773D2C-7489-42C3-B11D-37EF0C98C951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D773D2C-7489-42C3-B11D-37EF0C98C951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D773D2C-7489-42C3-B11D-37EF0C98C951}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2D773D2C-7489-42C3-B11D-37EF0C98C951}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2D773D2C-7489-42C3-B11D-37EF0C98C951}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
