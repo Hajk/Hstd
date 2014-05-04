@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Hajk_std.Text
+namespace Hstd.Text
 {
     public static class Convert
     {
-        public static string CzechLiteral(string text)
+        public static string EscapeCzechLiteral(string text)
         {
-            Dictionary<string, string> replacements = new Dictionary<string, string>()
+            var replacements = new Dictionary<string, string>()
             {
                 {"á","a"},
                 {"č", "c"},

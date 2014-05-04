@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hajk_std-v0.1", "Hajk_std-v0.1\Hajk_std-v0.1.csproj", "{686CDEA7-48F9-4FA6-94DF-3D9610384AF4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hstd_lib", "Hajk_std-v0.1\Hstd_lib.csproj", "{686CDEA7-48F9-4FA6-94DF-3D9610384AF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

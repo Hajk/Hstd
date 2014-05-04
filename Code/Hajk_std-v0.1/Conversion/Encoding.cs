@@ -2,20 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Hajk_std.Windows;
 using System.IO;
 
-namespace Hajk_std.Conversion
+namespace Hstd.Conversion
 {
     public class Encoding
     {
-        
-        public static void RemoveBOM(string folderPath, bool recursive)
-        {
-            Action<FileInfo, Dictionary<string, string>> RemoveBom = new Action<FileInfo,Dictionary<string,string>>(RemoveBOM_Action);
-
-            FileSystem.ActionOnEachFileInFolder(folderPath, RemoveBom, null, recursive);
-        }
         private static void RemoveBOM_Action(FileInfo file, Dictionary<string, string> properties)
         {
             // Properties se nepoužijí
