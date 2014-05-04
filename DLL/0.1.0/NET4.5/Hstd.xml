@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hstd</name>
+    </assembly>
+    <members>
+        <member name="T:Hstd.Security.Hash">
+            <summary>
+            Class for providing hash functions
+            </summary>
+        </member>
+        <member name="M:Hstd.Security.Hash.GenerateHash(System.Security.SecureString,System.Byte[])">
+            <summary>
+            Generate Hash by using MD5 agorithm from SecureString
+            </summary>
+            <param name="thisPassword">password for hash</param>
+            <param name="salt">Salt for secure hash</param>
+            <returns>string contains generated hash value</returns>
+        </member>
+        <member name="P:Hstd.Security.Hash.Get">
+            <summary>
+            Instance of Hash singleton
+            </summary>
+        </member>
+        <member name="T:Hstd.Math.Math">
+            <summary>
+            Class for provide basic Math functions
+            </summary>
+        </member>
+        <member name="M:Hstd.Math.Math.Bigger``1(``0,``0)">
+            <summary>
+            Compare two of Number, and return bigger.
+            </summary>
+            <param name="a">Number A</param>
+            <param name="b">Number B</param>
+            <returns></returns> 
+        </member>
+    </members>
+</doc>
