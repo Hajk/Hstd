@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hajk_std-v0.1", "Hajk_std-v0.1\Hajk_std-v0.1.csproj", "{686CDEA7-48F9-4FA6-94DF-3D9610384AF4}"
 EndProject
 Global
