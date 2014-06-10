@@ -11,7 +11,7 @@ namespace Hstd.Security
     /// <summary>
     /// Class for providing hash functions
     /// </summary>
-    public class Hash
+    public class Hash : IDisposable
     {
         #region Singleton 
 
@@ -31,6 +31,20 @@ namespace Hstd.Security
         }
 
         #endregion
+
+        #region IDisposable
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(_md5);
+        }
+
+        protected virtual void Dispose(bool withNativeResources)
+        {
+            _md5.Dispose();
+        }
+
+        #endregion 
 
         private readonly MD5CryptoServiceProvider _md5 = new MD5CryptoServiceProvider();
 
@@ -105,5 +119,7 @@ namespace Hstd.Security
             Buffer.BlockCopy(second, 0, ret, first.Length, second.Length);
             return ret;
         }
+
+        
     }
 }
